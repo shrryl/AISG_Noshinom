@@ -1,6 +1,0 @@
-nodes:
-- input.visual:
-    source: 0
-- model.posenet
-- draw.poses
-- output.screen

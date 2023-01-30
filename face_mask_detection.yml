@@ -1,7 +1,0 @@
-nodes:
-- input.visual:
-    source: 0
-- model.yolo_face
-- draw.bbox:
-    show_labels: True
-- output.screenq
