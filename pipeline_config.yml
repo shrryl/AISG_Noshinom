@@ -6,25 +6,25 @@
 # - draw.poses
 # - output.screen
 
-# fruit classification - img to csv (given example)
-nodes:
-- input.visual:
-   source: ../fruit-and-vegetable-image-recognition/for_inspection
-- custom_nodes.model.fruit_classifier
-- output.csv_writer:
-   stats_to_track: ["filename", "pred_label", "pred_score"]
-   file_path: fruit_predictions.csv
-   logging_interval: 0
-
-# # fruit classification - camera
+# # fruit classification - img to csv (given example)
 # nodes:
 # - input.visual:
-#     source: 0
-# - custom_nodes.model.fruit_classifier:
-#     detect: ["car"]
-# - draw.bbox:
-#     show_labels: True
-# - output.screen
+#    source: ../fruit-and-vegetable-image-recognition/for_inspection
+# - custom_nodes.model.fruit_classifier
+# - output.csv_writer:
+#    stats_to_track: ["filename", "pred_label", "pred_score"]
+#    file_path: fruit_predictions.csv
+#    logging_interval: 0
+
+# fruit classification - camera
+nodes:
+- input.visual:
+    source: 0
+- model.yolo:
+    detect: ["apple", "orange"]
+- draw.bbox:
+    show_labels: True
+- output.screen
 
 # nodes:
 # - input.visual:
