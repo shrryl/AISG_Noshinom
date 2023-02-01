@@ -4,4 +4,4 @@ nodes:
 - model.yolo_face
 - draw.bbox:
     show_labels: True
-- output.screenq
+- output.screen

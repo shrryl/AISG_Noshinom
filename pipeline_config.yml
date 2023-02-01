@@ -1,0 +1,42 @@
+## default config (waving man)
+# nodes:
+# - input.visual:
+#     source: https://storage.googleapis.com/peekingduck/videos/wave.mp4
+# - model.posenet
+# - draw.poses
+# - output.screen
+
+# fruit classification - img to csv (given example)
+nodes:
+- input.visual:
+   source: ../fruit-and-vegetable-image-recognition/for_inspection
+- custom_nodes.model.fruit_classifier
+- output.csv_writer:
+   stats_to_track: ["filename", "pred_label", "pred_score"]
+   file_path: fruit_predictions.csv
+   logging_interval: 0
+
+# # fruit classification - camera
+# nodes:
+# - input.visual:
+#     source: 0
+# - custom_nodes.model.fruit_classifier:
+#     detect: ["car"]
+# - draw.bbox:
+#     show_labels: True
+# - output.screen
+
+# nodes:
+# - input.visual:
+#     source: 0
+# - model.yolo:
+#     detect: ['watermelon', 'pear', 'potato', 'beetroot', 'apple', 'cauliflower', 'tomato',
+#  'carrot', 'chilli pepper', 'lemon', 'turnip', 'spinach', 'soy beans', 'kiwi',
+#  'bell pepper', 'orange' ,'pineapple', 'garlic', 'paprika', 'jalepeno',
+#  'cucumber', 'grapes', 'radish', 'capsicum', 'cabbage', 'pomegranate',
+#  'sweetpotato', 'banana', 'lettuce', 'sweetcorn', 'ginger', 'mango', 'peas',
+#  'eggplant', 'corn', 'onion']
+# - draw.bbox:
+#     show_labels: True
+# - custom_nodes.model.fruit_classifier
+# - output.screen
