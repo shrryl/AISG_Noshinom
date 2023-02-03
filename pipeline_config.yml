@@ -1,0 +1,14 @@
+# nodes:
+# - input.visual:
+#     source: https://storage.googleapis.com/peekingduck/videos/wave.mp4
+# - model.posenet
+# - draw.poses
+# - output.screen
+
+nodes:
+- input.visual:
+    source: 0
+- custom_nodes.model.fruit_classifier
+- draw.bbox:
+    show_labels: True
+- output.screen
