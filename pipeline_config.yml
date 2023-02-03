@@ -6,7 +6,7 @@
 # - draw.poses
 # - output.screen
 
-# Mango classification
+# Mango classification (img to csv predictions)
 nodes:
 - input.visual:
    source: ./model_data/inspection

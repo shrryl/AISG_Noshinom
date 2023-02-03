@@ -41,11 +41,13 @@ class Node(AbstractNode):
         # result = do_something(inputs["in1"], inputs["in2"])
         # outputs = {"out1": result}
         # return outputs
+        
         img = cv2.cvtColor(inputs["img"], cv2.COLOR_BGR2RGB)
         img = cv2.resize(img, (IMG_WIDTH, IMG_HEIGHT))
         img = np.expand_dims(img, axis=0)
         predictions = self.model.predict(img)
         score = tf.nn.softmax(predictions[0])
+        
 
         return {
                 "pred_label": self.class_label_map[np.argmax(score)],
