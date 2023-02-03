@@ -1,3 +1,4 @@
+## default pipeline
 # nodes:
 # - input.visual:
 #     source: https://storage.googleapis.com/peekingduck/videos/wave.mp4
@@ -5,10 +6,12 @@
 # - draw.poses
 # - output.screen
 
+# Mango classification
 nodes:
 - input.visual:
-    source: 0
+   source: ./model_data/inspection
 - custom_nodes.model.fruit_classifier
-- draw.bbox:
-    show_labels: True
-- output.screen
+- output.csv_writer:
+   stats_to_track: ["filename", "pred_label", "pred_score"]
+   file_path: mango_predictions.csv
+   logging_interval: 0
