@@ -1,6 +1,7 @@
 # National AI Student Challenge 2022
 Category B (with Coding)
 ### Team: Noshinom
+More details of this project: [YouTube link](https://www.youtube.com/watch?v=gYg3DLc5w0I&ab_channel=AronLee) 
 
 ## How to run our code
 1. Ensure that you have PeekingDuck installed. `pip install peekingduck`
@@ -30,7 +31,11 @@ In the folder [custom_nodes](src/custom_nodes), we have the [fruit_classifier.py
 With our class labels as {0: 'fresh', 1: 'rotten'}, we are able to run the pipeline in [pipeline_config.yml](pipeline_config.yml) to output a CSV of the predictions of images in the [inspection](model_data/inspection) folder.
 
 ### Accuracy
-Our average accuracy was about 95%.
+Our average accuracy was about 98.5%. However, prediction of rotten mangos seem to have a higher accuracy over the fresh ones.
+|Class|Accuracy|
+|---|-----|
+|fresh|98.3%|
+|rotten|99%|
 
 ## Further Improvements
 We hope to be able to use PeekingDuck and other resources to have our input as ***live feed from the camera***, instead of images from a folder. 
